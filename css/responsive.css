@@ -79,3 +79,28 @@
     bottom: 16px;
   }
 }
+
+/* 태블릿: 2칸 */
+@media (max-width: 1024px) {
+  .album-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .pro .contents {
+    padding: 60px 0;
+  }
+}
+
+/* 모바일: 1칸 */
+@media (max-width: 768px) {
+  .album-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .section-title {
+    font-size: 26px;
+    margin-bottom: 24px;
+  }
+}

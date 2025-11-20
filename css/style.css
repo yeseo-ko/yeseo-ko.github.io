@@ -305,3 +305,68 @@ html {
   scroll-margin-top: 100px; /* 헤더 높이에 맞게 숫자 조절 */
 }
 
+/* ===== album 섹션 ===== */
+
+.pro {
+  background: #f7f5ff; /* 아주 연한 보라 배경 */
+  display: flex;
+  align-items: center;
+}
+
+.pro .contents {
+  padding: 80px 0;
+}
+
+/* 섹션 제목 */
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #472fa8;
+  font-family: 'Indie Flower', cursive;
+}
+
+/* 앨범 그리드 */
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* 각 이미지 카드 */
+.album-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 10px 25px rgba(71, 47, 168, 0.15);
+}
+
+/* 이미지 */
+.album-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* hover 효과: 살짝 확대 + 밝게 */
+.album-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+
+/* hover 시 보라빛 오라 */
+.album-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  box-shadow: 0 0 0 rgba(71, 47, 168, 0);
+  transition: box-shadow 0.4s ease;
+}
+
+.album-item:hover::after {
+  box-shadow: 0 0 25px rgba(71, 47, 168, 0.35);
+}
