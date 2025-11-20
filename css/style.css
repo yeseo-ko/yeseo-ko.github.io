@@ -517,3 +517,40 @@ html {
     text-align: center;
   }
 }
+
+/* 모바일에서 About Me 텍스트/해시태그 가운데 정렬 */
+@media (max-width: 768px) {
+  .aboutme {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .desc {
+    text-align: center;
+  }
+
+  .hashs {
+    justify-content: center;
+  }
+}
+
+
+/* 프로필 사진과 동그라미 z-index 정리 (PC 공통) */
+.photo {
+  position: relative;
+}
+
+.photo img {
+  position: relative;
+  z-index: 3;          /* 얼굴이 제일 위 */
+}
+
+/* 점선 큰 동그라미를 맨 뒤로 */
+.photo .dots span:nth-child(1) {
+  z-index: 1;
+}
+
+/* 핑크 작은 동그라미는 얼굴 뒤, 점선 앞 정도 */
+.photo .dots span:nth-child(2) {
+  z-index: 2;
+}
