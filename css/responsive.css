@@ -20,7 +20,7 @@
     
     }
 } */
- 
+
 /* 이미지가 화면을 안 튀어나가게 */
 img {
   max-width: 100%;
@@ -200,5 +200,25 @@ header nav {
   .gnb {
     gap: 16px;
     font-size: 14px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .photo img {
+    max-width: 180px; /* 모바일에서는 더 작게 */
+  }
+}
+
+
+.photo {
+  width: 100%;
+  max-width: 280px; /* PC 기준 */
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .photo {
+    max-width: 200px;
   }
 }
