@@ -373,3 +373,81 @@ html {
     left: 70%;
   }
 }
+
+/* ============================
+   프로필 뒤 배경 동그라미 정렬 (PC + 모바일 모두)
+============================ */
+
+.about-photo {
+  position: relative;
+  width: 280px;     /* 프로필 영역 너비 통일 */
+  margin: 0 auto;
+}
+
+/* 공통 스타일 */
+.about-photo .dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* dotted 원형 (가장 큰 점선 원) */
+.about-photo .dot-1 {
+  width: 300px;
+  height: 300px;
+  border: 4px dotted rgba(71, 47, 168, 0.25);
+  top: -25px;
+}
+
+/* 납작한 연보라색 배경 (문제의 그 도형!) */
+.about-photo .dot-2 {
+  width: 260px;
+  height: 260px;
+  background: #d6caff;
+  border-radius: 50% 60% 55% 50% / 55% 40% 60% 50%;
+  top: 10px;
+  opacity: 0.8;
+}
+
+/* 작은 포인트 데코 */
+.about-photo .dot-3 {
+  width: 60px;
+  height: 60px;
+  background: #f1a9d7af;
+  background-image: radial-gradient(#fff 20%, transparent 0),
+                    radial-gradient(#fff 20%, transparent 0);
+  background-size: 12px 12px;
+  background-position: 0 0, 6px 6px;
+  border-radius: 50%;
+  top: 220px;
+  left: 70%;
+  transform: translateX(-50%);
+}
+
+/* 모바일 최적화 */
+@media (max-width: 768px) {
+  .about-photo {
+    width: 220px;
+  }
+
+  .about-photo .dot-1 {
+    width: 240px;
+    height: 240px;
+    top: -20px;
+  }
+
+  .about-photo .dot-2 {
+    width: 200px;
+    height: 200px;
+    top: 5px;
+  }
+
+  .about-photo .dot-3 {
+    width: 45px;
+    height: 45px;
+    top: 180px;
+    left: 72%;
+  }
+}
