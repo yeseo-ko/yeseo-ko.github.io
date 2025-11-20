@@ -21,115 +21,66 @@
     }
 } */
 
-/* 공통 이미지 */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* 컨테이너 */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
-
-/* GNB */
-header nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 0;
-}
-
-.gnb {
-  display: flex;
-  gap: 24px;
-}
-
-.gnb a {
-  text-decoration: none;
-  font-weight: 500;
-}
-
-/* About Me 영역 레이아웃 */
-.aboutme {
-  display: flex;
-  align-items: flex-start;
-  gap: 40px;
-  margin-top: 60px;
-}
-
-/* 사진 영역 전체 */
-.photo {
-  position: relative;
-  width: 100%;
-  max-width: 260px;       /* PC 기준 최대 크기 */
-  margin: 0 auto;
-}
-
-/* 프로필 사진 */
-.photo img {
-  width: 100%;
-  border-radius: 50%;
-}
-
-/* 동그라미 점들 */
-.photo .dots {
-  position: absolute;
-  bottom: -18px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
-}
-
-.photo .dots span {
-  width: 10px;
-  height: 10px;
-  background-color: #d3c4ff;
-  border-radius: 50%;
-}
-
-/* 설명 영역 */
-.desc {
-  flex: 1;
-  line-height: 1.6;
-}
-
-/* 부드러운 스크롤 */
-html {
-  scroll-behavior: smooth;
-}
-
 /* ===================== 모바일 768px 이하 ===================== */
 @media (max-width: 768px) {
 
-  /* AboutMe 전체를 세로형으로 정렬 */
+  /* 전체 컨텐츠 폭을 모바일에 맞게 */
+  .contents {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 16px !important;
+  }
+
+  nav {
+    width: 100% !important;
+  }
+
+  /* 네비 메뉴 */
+  header nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0 !important;
+  }
+
+  .gnb {
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  /* Home 섹션 */
+  .heading h1,
+  .heading p {
+    text-align: center;
+  }
+
+  /* About Me 전체 세로 배치 */
   .aboutme {
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
     height: auto !important;
-    padding: 40px 0;
+    padding: 40px 0 !important;
+    gap: 20px !important;
   }
 
-  /* 사진 영역 초기화 → 무조건 가운데 */
+  /* 프로필 사진 박스 초기화 + 중앙 정렬 */
   .photo {
     flex: none !important;
     margin: 0 auto 20px auto !important;
     position: static !important;
 
-    /* PC에서 잡혀 있던 margin-right 삭제 */
     margin-right: 0 !important;
     left: auto !important;
     right: auto !important;
     top: auto !important;
     transform: none !important;
 
-    max-width: 180px !important; /* 모바일 적당한 크기 */
     width: 100% !important;
+    max-width: 180px !important;
   }
 
   /* 사진 자체 */
@@ -141,16 +92,15 @@ html {
     border-radius: 61% 39% 52% 48% / 60% 33% 67% 40%;
   }
 
-  /* 배경 장식(span들) → absolute 좌표 강제 해제 */
+  /* 사진 뒤 장식들(static으로 변경) */
   .photo span:nth-child(1),
   .photo span:nth-child(2),
   .photo span:nth-child(3) {
     position: static !important;
-    margin: 10px auto 0 auto !important;
     display: block !important;
+    margin: 10px auto 0 auto !important;
   }
 
-  /* span들 크기도 살짝 축소해서 어울리게 */
   .photo span:nth-child(1) {
     width: 150px !important;
     height: 150px !important;
@@ -166,7 +116,7 @@ html {
     height: 40px !important;
   }
 
-  /* 텍스트 영역도 모바일에 맞게 */
+  /* 설명 본문 */
   .desc {
     flex: none !important;
     width: 100% !important;
@@ -178,6 +128,35 @@ html {
     text-align: left !important;
     margin-top: 20px;
     font-size: 14px;
+  }
+
+  /* 해시태그 중앙 정렬 */
+  .hashs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+  }
+
+  /* 연락처 버튼 */
+  .contact {
+    padding: 40px 0 !important;
+  }
+
+  .btns {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btns button {
+    width: 100% !important;
+  }
+
+  /* TOP 버튼 조정 */
+  .GoToTop {
+    right: 16px !important;
+    bottom: 16px !important;
   }
 
 }
