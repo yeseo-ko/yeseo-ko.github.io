@@ -7,8 +7,9 @@
 } */
 
 .contents{
-    width: 1280px;
-    margin: auto;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
 }
 /* 네비게이션 */
 header{
@@ -299,4 +300,12 @@ html {
 #album,
 #contactme {
   scroll-margin-top: 100px; /* 헤더 높이에 맞게 숫자 조절 */
+}
+
+.photo img {
+  width: 100%;
+  max-width: 280px; /* PC에서 최대 크기 */
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
