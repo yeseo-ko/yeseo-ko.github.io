@@ -63,12 +63,14 @@ nav{
 
 }
 /* 메인이미지 */
-.home{
+.home {
     display: flex;
+    justify-content: center;  /* 가로 중앙 정렬 */
+    align-items: center;      /* 세로 중앙 정렬 */
     height: 100vh;
-    background: url('../images/full3.jpg') no-repeat center center;
     background: url('../images/ani.gif') no-repeat center center;
-    background-size: 100% 100%;
+    background-size: cover;   /* 화면 꽉 차게 */
+    text-align: center;
 }
 .heading{
     text-align: center;
