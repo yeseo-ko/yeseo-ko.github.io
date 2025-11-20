@@ -1,112 +1,109 @@
 @import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@300;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
-/* top누르면 스크롤 부드럽게 - 익플은 안됨 */
-/* html{
-    scroll-behavior: smooth;
-} */
-
-.contents{
+/* 전체 레이아웃 공통 */
+.contents {
     max-width: 1280px;
     width: 100%;
     margin: 0 auto;
 }
-/* 네비게이션 */
-header{
-    position: absolute;
+
+/* ============================
+   HEADER / NAV
+============================ */
+header {
     position: fixed;
+    top: 0;
     width: 100%;
     transition: 0.5s;
-    
-}
-/* 네비메뉴바*/
-.active .gnb li a{
-    color: #000;
-   
-}
-.active{
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.144);
-    background: #fff;
-    z-index: 100;
+    z-index: 200;
 }
 
-nav{
-    display:flex;
+.active {
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.12);
+}
+
+.active .gnb li a {
+    color: #000;
+}
+
+nav {
+    display: flex;
     width: 1280px;
     margin: auto;
     justify-content: space-between;
+}
 
+.gnb {
+    display: flex;
 }
-.gnb{
-    display:flex;
-}
-.gnb li{
+
+.gnb li {
     margin: 20px;
 }
-.gnb li:last-child{
-    margin-right: 0;
-}
-.gnb li a{
+
+.gnb li a {
     color: #fff;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img{
+.logo img {
     width: 72px;
     height: 55px;
-    margin-left:20px;
-   
-
+    margin-left: 20px;
 }
-/* 메인이미지 */
+
+/* ============================
+   HOME
+============================ */
 .home {
     display: flex;
-    justify-content: center;  /* 가로 중앙 정렬 */
-    align-items: center;      /* 세로 중앙 정렬 */
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     background: url('../images/ani.gif') no-repeat center center;
-    background-size: cover;   /* 화면 꽉 차게 */
+    background-size: cover;
     text-align: center;
 }
-.heading{
-    text-align: center;
+
+.heading {
     color: #fff;
 }
 
-/* 풀배경으로 가야하는 레이아웃 */
-.FullScreen{
-    height:100vh;
+/* ============================
+   About Me 섹션
+============================ */
+.FullScreen {
+    min-height: 100vh;
+    height: auto;
 }
-/*내 프로필영역 */
-.s2{
+
+.s2 {
     background: url('../images/bg_gray.png') no-repeat center center;
+    background-size: cover;
 }
 
-.aboutme{
+.aboutme {
     display: flex;
-    flex:5;
-    align-items: center;
-    height: 100vh;
-    
+    align-items: flex-start;
+    gap: 60px;
+    padding: 160px 0 120px;
+    height: auto;
 }
 
-/* 프로필사진영역 */
-.photo{
-    flex:2;
-    margin-right:220px;
+/* 프로필 사진 */
+.photo {
+    flex: 1.5;
     position: relative;
-    
-   }
-.photo img{
+}
+
+.photo img {
     width: 100%;
-    height: auto; /* ← 고정 500px 말고 자동 비율 유지 */
+    height: auto;
     max-height: 500px;
     border-radius: 61% 39% 52% 48% / 60% 33% 67% 40%;
 }
+
 .photo span:nth-child(1){
     height: 441px;
     width: 413px;
@@ -131,7 +128,7 @@ nav{
     height: 40px;
     width: 50px;
     background: #f1a9d7af;
-    background-image: radial-gradient(rgb(255, 255, 255) 20%, transparent 0), radial-gradient(rgb(255, 255, 255) 20%, transparent 0);
+    background-image: radial-gradient(#fff 20%, transparent 0), radial-gradient(#fff 20%, transparent 0);
     background-position: 0 0, 10px 10px;
     background-size: 10px 10px;
     position: absolute;
@@ -140,144 +137,156 @@ nav{
     border-radius: 48% 52% 61% 39% / 44% 55% 45% 56%;
     z-index: -1;
 }
-/* 프로필내용영역 */
-.desc{
-    flex:3;
+
+/* 프로필 내용 */
+.desc {
+    flex: 2;
 }
-/* about me 타이틀 */
-.abm_title{
+
+.abm_title {
     position: relative;
+    margin-bottom: 30px;
 }
-.abm_title h1{
+
+.abm_title h1 {
     font-size: 42px;
-    color:  #472fa8;
+    color: #472fa8;
     font-family: 'Indie Flower', cursive;
 }
-    
-.abm_title span{
+
+.abm_title span {
     height: 28px;
     width: 200px;
     background: #472fa823;
     position: absolute;
     bottom: -74%;
-    border-radius: 34% 66% 46% 54% / 50% 47% 53% 50%  ;
-}
-/* 프로필 내용영역 */
-.desc h3{
-    padding: 28px 0;
-}
-.desc h3 b{
-    font-size: 28px;
-    
+    border-radius: 34% 66% 46% 54%;
 }
 
-.desc dt{
+.desc h3 {
+    padding: 28px 0;
+    font-size: 22px;
+}
+
+.desc h3 b {
+    font-size: 28px;
+}
+
+.desc dt {
     font-size: 20px;
     color: #a8a8a8;
 }
-/* 성격 해시태그 */
+
+/* 해시태그 */
+.hashs {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 .hashs span{
-    font-size: 14px;
-    padding: 14px;
+    padding: 12px 18px;
     background: #472fa894;
     border-radius: 20px;
     color: #fff;
-    margin-right: 16px;
-}
-.hashs span:nth-child(2){
-    background: #ab60dd8e;
-}
-.hashs span:nth-child(3){
-    background: #f1a9d7af;
+    font-size: 14px;
 }
 
-/* 콜투액션  */
-.c-t-a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #000;
+.hashs span:nth-child(2){ background:#ab60dd8e; }
+.hashs span:nth-child(3){ background:#f1a9d7af; }
 
-}
-.call-to-action{
-    background: url('../images/call.jpg') no-repeat center;
-    background-size: cover;
-    /* 띠배너가 중앙으로 안왔던 이유: 부모디브에 플렉스를 안줬고, 지금 디브에 width를 안쭸기 때ㅔ문 */
-    width: 100%;
-    height: 450px;
+
+/* ============================
+   Album
+============================ */
+.pro {
+    background: #f7f5ff;
+    padding: 100px 0 120px;
+    clear: both;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}   
-.call-to-action:before{
-    content: '';
-    background: linear-gradient(90deg, #472fa744, #dc87e57c);
-    width: 100%;
-    height: 450px;
-    position: absolute;
+}
 
-}
-.call-to-action a{
-    color: #fff;
-    padding: 15px 30px;
-    background: linear-gradient(90deg, #472fa7, #5331ad, #dc87e5);
-    z-index: 1;
-}
-.call-to-action h2{
-    margin-bottom: 50px;
-    line-height: 50px;
+.section-title {
     text-align: center;
-    font-size: 40px;
-    color: #fff;
-    z-index: 1;
+    font-size: 32px;
+    color: #472fa8;
+    margin-bottom: 40px;
+    font-family: 'Indie Flower', cursive;
 }
 
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
 
-/* 연락처 */
-.contact{
+.album-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    background: #fff;
+    box-shadow: 0 10px 25px rgba(71, 47, 168, 0.15);
+}
+
+.album-item img {
+    width: 100%;
+    height: 100%;
+    max-height: 360px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.album-item:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+}
+
+/* ============================
+   Contact
+============================ */
+.contact {
     background: linear-gradient(180deg, #482fa8, #7641bc);
     height: 300px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
-.contact p{
+.contact p {
     color: #fff;
     font-size: 30px;
 }
 
-.contact span{
-    
+.contact span {
     background: url('../images/luna.png') no-repeat center;
     width: 40px;
     height: 45px;
     background-size: 30px 40px;
 }
 
-/* contact 버튼디자인 */
-.btns{
+.btns {
     margin-top: 17px ;
 }
-.btn-1, .btn-2{
-    display: inline-block;
+
+.btn-1, .btn-2 {
     padding: 12px;
     width: 180px;
     margin: 10px;
-    text-align: center;
     border-radius: 20px;
-    color: #fff;
     background: inherit;
-    border: 1px solid rgb(255, 255, 255);
-    box-shadow:none; cursor:pointer;}
-.btns i{
-    padding-right: 7px;
+    border: 1px solid #fff;
+    color: #fff;
 }
-/* GoToTop top버튼 */
-.GoToTop{
+
+.btns i { padding-right: 7px; }
+
+/* ============================
+   Go To Top
+============================ */
+.GoToTop {
     position: fixed;
     bottom: 50px;
     right: 50px;
@@ -285,118 +294,39 @@ nav{
     height: 50px;
     border-radius: 50%;
     background: linear-gradient(180deg, #a72f97, #7641bc);
-    /* 폰트어썸은 폰트속성 */
     color: #fff;
     text-align: center;
     line-height: 50px;
     font-size: 30px;
-    /* 스크롤효과*/
-    /* transition의 기본 속기값은 duration */
     transition: 0.5s;
 }
 
+/* 스크롤 위치 이동 보정 */
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
+}
+#aboutme, #album, #contactme {
+    scroll-margin-top: 100px;
 }
 
-#aboutme,
-#album,
-#contactme {
-  scroll-margin-top: 100px; /* 헤더 높이에 맞게 숫자 조절 */
-}
-
-/* ================== album 섹션 기본 ================== */
-
-.pro {
-  background: #f7f5ff;              /* 연한 보라 배경 */
-}
-
-.pro .contents {
-  padding: 80px 0 120px;            /* 아래 여백 넉넉히 줘서 contact 안 겹치게 */
-}
-
-/* 섹션 제목 */
-.section-title {
-  text-align: center;
-  font-size: 32px;
-  margin-bottom: 40px;
-  color: #472fa8;
-  font-family: 'Indie Flower', cursive;
-}
-
-/* 이미지 그리드 (PC 기준 3칸) */
-.album-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-/* 카드 하나 */
-.album-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 24px;
-  background: #fff;
-  box-shadow: 0 10px 25px rgba(71, 47, 168, 0.15);
-}
-
-/* 이미지 */
-.album-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;                 /* 비율 유지하면서 꽉 채우기 */
-  display: block;
-  transition: transform 0.4s ease, filter 0.4s ease;
-}
-
-/* hover 효과 */
-.album-item:hover img {
-  transform: scale(1.05);
-  filter: brightness(1.05);
-}
-
-.album-item::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 24px;
-  box-shadow: 0 0 0 rgba(71, 47, 168, 0);
-  transition: box-shadow 0.4s ease;
-}
-
-.album-item:hover::after {
-  box-shadow: 0 0 25px rgba(71, 47, 168, 0.35);
-}
-
-
-/* ================== 반응형 (태블릿 / 모바일) ================== */
-
-/* 태블릿: 2칸 */
+/* ============================
+   Responsive
+============================ */
 @media (max-width: 1024px) {
-  .album-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
+    .aboutme { flex-direction: column; padding: 140px 20px 80px; }
+    .photo { margin: 0 auto; max-width: 320px; }
 
-  .pro .contents {
-    padding: 60px 0 80px;
-  }
+    .album-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
 }
 
-/* 모바일: 1칸 */
 @media (max-width: 768px) {
+    .album-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
 
-  .album-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .section-title {
-    font-size: 26px;
-    margin-bottom: 24px;
-  }
-
-  .pro .contents {
-    padding: 40px 16px 60px;
-  }
+    .section-title { font-size: 26px; }
 }
