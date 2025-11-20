@@ -1,393 +1,519 @@
 @import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@300;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&display=swap');
 
-/* =============================
-   기본 설정
-============================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* 전체 레이아웃 공통 */
+.contents {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
 }
 
-body {
-  background: #faf9ff;
-  font-family: 'Pretendard', sans-serif;
-  color: #333;
-  line-height: 1.6;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-/* 공통 wrapper */
-.contents,
-.inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* =============================
-   HEADER
-============================= */
-
+/* ============================
+   HEADER / NAV
+============================ */
 header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 200;
-  background: rgb(255 255 255 / 12%);
-  backdrop-filter: blur(6px);
-  transition: 0.3s;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: 0.5s;
+    z-index: 200;
 }
 
 .active {
-  background: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.12);
+}
+
+.active .gnb li a {
+    color: #000;
 }
 
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 70px;
-}
-
-.logo img {
-  width: 72px;
-  height: auto;
+    display: flex;
+    width: 1280px;
+    margin: auto;
+    justify-content: space-between;
 }
 
 .gnb {
-  display: flex;
+    display: flex;
 }
 
 .gnb li {
-  list-style: none;
-  margin: 0 18px;
+    margin: 20px;
 }
 
-.gnb a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.25s;
+.gnb li a {
+    color: #fff;
 }
 
-.active .gnb a {
-  color: #333;
+.logo img{
+    width: 72px;
+    height: 55px;
+    margin-left: 20px;
+    margin-top: 20px;   /* 위에서 20px 떨어지게 */
 }
-
-
-/* =============================
+/* ============================
    HOME
-============================= */
-
+============================ */
 .home {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: url('../images/ani.gif') no-repeat center/cover;
-  text-align: center;
-  padding-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('../images/ani.gif') no-repeat center center;
+    background-size: cover;
+    text-align: center;
 }
 
 .heading {
-  color: white;
+    color: #fff;
 }
 
-/* =============================
-   ABOUT ME
-============================= */
-
+/* ============================
+   About Me 섹션
+============================ */
 .FullScreen {
-  min-height: 100vh;
-  height: auto;
+    min-height: 100vh;
+    height: auto;
 }
 
 .s2 {
-  background: url('../images/bg_gray.png') no-repeat center/cover;
+    background: url('../images/bg_gray.png') no-repeat center center;
+    background-size: cover;
 }
 
 .aboutme {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 80px;
-  padding: 140px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+    padding: 160px 0 120px;
+    height: auto;
 }
 
-/* ===== 프로필 사진 ===== */
-
+/* 프로필 사진 */
 .photo {
-  flex: 1;
-  position: relative;
-  display: flex;
-  justify-content: center;
+    flex: 1.5;
+    position: relative;
 }
 
 .photo img {
-  width: 260px;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 61% 39% 52% 48% / 60% 33% 67% 40%;
-  position: relative;
-  z-index: 3;
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    border-radius: 61% 39% 52% 48% / 60% 33% 67% 40%;
 }
 
-/* ---- 동그라미 배경 ---- */
+.photo span:nth-child(1){
+    height: 441px;
+    width: 413px;
+    border: 4px dotted rgba(71, 47, 168, 0.286);
+    position: absolute;
+    bottom: 15%;
+    left: -2%;
+    border-radius: 48% 52% 61% 39% / 44% 55% 45% 56%;
+    z-index: -1;
+}
+.photo span:nth-child(2){
+    height: 372px;
+    width: 413px;
+    background:  #472fa85d ;
+    position: absolute;
+    bottom: 0%;
+    left: -7%;
+    border-radius: 48% 52% 61% 39% / 44% 55% 45% 56%;
+    z-index: -1;
+}
+.photo span:nth-child(3){
+    height: 40px;
+    width: 50px;
+    background: #f1a9d7af;
+    background-image: radial-gradient(#fff 20%, transparent 0), radial-gradient(#fff 20%, transparent 0);
+    background-position: 0 0, 10px 10px;
+    background-size: 10px 10px;
+    position: absolute;
+    bottom: 4%;
+    left: 82%;
+    border-radius: 48% 52% 61% 39% / 44% 55% 45% 56%;
+    z-index: -1;
+}
 
-.dots span {
+/* 프로필 내용 */
+.desc {
+    flex: 2;
+}
+
+.abm_title {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.abm_title h1 {
+    font-size: 42px;
+    color: #472fa8;
+    font-family: 'Indie Flower', cursive;
+}
+
+.abm_title span{
+  display: none;
+}
+
+.desc h3 {
+    padding: 28px 0;
+    font-size: 22px;
+}
+
+.desc h3 b {
+    font-size: 28px;
+}
+
+.desc dt {
+    font-size: 20px;
+    color: #a8a8a8;
+}
+
+/* 해시태그 */
+.hashs {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.hashs span{
+    padding: 12px 18px;
+    background: #472fa894;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.hashs span:nth-child(2){ background:#ab60dd8e; }
+.hashs span:nth-child(3){ background:#f1a9d7af; }
+
+
+/* ============================
+   Album
+============================ */
+.pro {
+    background: #f7f5ff;
+    padding: 100px 0 120px;
+    clear: both;
+    position: relative;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: #472fa8;
+    margin-bottom: 40px;
+    font-family: 'Indie Flower', cursive;
+}
+
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.album-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    background: #fff;
+    box-shadow: 0 10px 25px rgba(71, 47, 168, 0.15);
+}
+
+.album-item img {
+    width: 100%;
+    height: 100%;
+    max-height: 360px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.album-item:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+}
+
+/* ============================
+   Contact
+============================ */
+.contact {
+    background: linear-gradient(180deg, #482fa8, #7641bc);
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact p {
+    color: #fff;
+    font-size: 30px;
+}
+
+.contact span {
+    background: url('../images/luna.png') no-repeat center;
+    width: 40px;
+    height: 45px;
+    background-size: 30px 40px;
+}
+
+.btns {
+    margin-top: 17px ;
+}
+
+.btn-1, .btn-2 {
+    padding: 12px;
+    width: 180px;
+    margin: 10px;
+    border-radius: 20px;
+    background: inherit;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.btns i { padding-right: 7px; }
+
+/* ============================
+   Go To Top
+============================ */
+.GoToTop {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #a72f97, #7641bc);
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    font-size: 30px;
+    transition: 0.5s;
+}
+
+/* 스크롤 위치 이동 보정 */
+html {
+    scroll-behavior: smooth;
+}
+#aboutme, #album, #contactme {
+    scroll-margin-top: 100px;
+}
+
+/* ============================
+   Responsive
+============================ */
+@media (max-width: 1024px) {
+    .aboutme { flex-direction: column; padding: 140px 20px 80px; }
+    .photo { margin: 0 auto; max-width: 320px; }
+
+    .album-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .album-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .section-title { font-size: 26px; }
+}
+
+
+/* ============================
+   모바일에서 프로필 이미지 중앙 정렬
+   ============================ */
+@media (max-width: 768px) {
+
+  /* aboutme 전체를 세로 배치 + 좌우 여백 정리 */
+  .aboutme {
+    flex-direction: column;
+    align-items: center;
+    padding: 120px 16px 60px;
+    gap: 32px;
+  }
+
+  /* 프로필 박스 너비 고정 & 중앙 */
+  .photo {
+    flex: none;
+    width: 80%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* 큰 보라 동그라미들을 화면 중앙 기준으로 재정렬 */
+  .photo span:nth-child(1),
+  .photo span:nth-child(2) {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 260px;
+    height: 260px;
+  }
+
+  /* 작은 물방울 무늬는 살짝만 오른쪽으로 */
+  .photo span:nth-child(3) {
+    left: 70%;
+  }
+}
+
+/* ============================
+   프로필 뒤 배경 동그라미 정렬 (PC + 모바일 모두)
+============================ */
+
+.about-photo {
+  position: relative;
+  width: 280px;     /* 프로필 영역 너비 통일 */
+  margin: 0 auto;
+}
+
+/* 공통 스타일 */
+.about-photo .dot {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 50%;
-}
-
-/* 큰 점선 원 */
-.dots span:nth-child(1) {
-  width: 300px;
-  height: 300px;
-  border: 4px dotted rgba(71,47,168,0.25);
-  top: -22px;
   z-index: 1;
 }
 
-/* 납작한 연보라 색 원 (문제의 그놈) */
-.dots span:nth-child(2) {
-  width: 270px;
-  height: 270px;
-  top: 10px;
-  background: #d6caff;
-  opacity: 0.8;
-  border-radius: 50% 60% 55% 50% / 55% 40% 60% 50%;
-  z-index: 2;
+/* dotted 원형 (가장 큰 점선 원) */
+.about-photo .dot-1 {
+  width: 300px;
+  height: 300px;
+  border: 4px dotted rgba(71, 47, 168, 0.25);
+  top: -25px;
 }
 
-/* 핑크 작은 동그라미 */
-.dots span:nth-child(3) {
+/* 납작한 연보라색 배경 (문제의 그 도형!) */
+.about-photo .dot-2 {
+  width: 260px;
+  height: 260px;
+  background: #d6caff;
+  border-radius: 50% 60% 55% 50% / 55% 40% 60% 50%;
+  top: 10px;
+  opacity: 0.8;
+}
+
+/* 작은 포인트 데코 */
+.about-photo .dot-3 {
   width: 60px;
   height: 60px;
-  top: 78%;
-  left: 72%;
-  transform: translateX(-50%);
   background: #f1a9d7af;
   background-image: radial-gradient(#fff 20%, transparent 0),
                     radial-gradient(#fff 20%, transparent 0);
   background-size: 12px 12px;
   background-position: 0 0, 6px 6px;
-  z-index: 5;
-}
-
-/* ===== 프로필 텍스트 ===== */
-
-.desc {
-  flex: 1.2;
-  min-width: 300px;
-}
-
-.abm_title {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.abm_title h1 {
-  font-size: 42px;
-  color: #472fa8;
-  font-family: 'Indie Flower', cursive;
-}
-
-.abm_title span {
-  position: absolute;
-  width: 200px;
-  height: 26px;
-  background: #e6dcff;
-  bottom: -60%;
-  border-radius: 40%;
-}
-
-.desc h3 {
-  margin: 30px 0;
-  font-size: 22px;
-}
-
-.desc h3 b {
-  font-size: 28px;
-}
-
-/* 해시태그 정렬 */
-.hashs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 16px;
-}
-
-.hashs span {
-  padding: 10px 16px;
-  border-radius: 20px;
-  color: white;
-  font-size: 14px;
-}
-
-.hashs span:nth-child(1) { background:#472fa8; }
-.hashs span:nth-child(2) { background:#ab60dd; }
-.hashs span:nth-child(3) { background:#f1a9d7; }
-
-/* =============================
-   ALBUM
-============================= */
-
-.pro {
-  padding: 100px 20px 120px;
-  background: #f7f5ff;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 32px;
-  margin-bottom: 40px;
-  font-family: 'Indie Flower', cursive;
-  color: #472fa8;
-}
-
-.album-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.album-item {
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-}
-
-.album-item img {
-  width: 100%;
-  height: 100%;
-  max-height: 320px;
-  object-fit: cover;
-  transition: 0.3s ease;
-}
-
-.album-item:hover img {
-  transform: scale(1.05);
-}
-
-/* =============================
-   CONTACT
-============================= */
-
-.contact {
-  padding: 80px 20px;
-  background: linear-gradient(180deg, #482fa8, #7641bc);
-  text-align: center;
-}
-
-.contact p {
-  color: #fff;
-  font-size: 30px;
-  margin-bottom: 20px;
-}
-
-.btns {
-  margin-top: 15px;
-}
-
-.btns .btn-1, 
-.btns .btn-2 {
-  padding: 12px;
-  width: 200px;
-  margin: 8px;
-  border-radius: 20px;
-  background: transparent;
-  border: 1px solid #fff;
-  color: white;
-  cursor: pointer;
-}
-
-.btns i {
-  margin-right: 8px;
-}
-
-/* =============================
-   TOP 버튼
-============================= */
-
-.GoToTop {
-  position: fixed;
-  bottom: 50px;
-  right: 50px;
-  width: 50px;
-  height: 50px;
   border-radius: 50%;
-  background: linear-gradient(180deg, #a72f97, #7641bc);
-  color: white;
-  text-align: center;
-  line-height: 50px;
-  font-size: 26px;
-  z-index: 300;
+  top: 220px;
+  left: 70%;
+  transform: translateX(-50%);
 }
 
-/* =============================
-   반응형
-============================= */
-
-@media (max-width: 1024px) {
-  .aboutme {
-    flex-direction: column;
-    padding-top: 160px;
-    gap: 40px;
-  }
-
-  .photo {
-    margin-right: 0;
-  }
-
-  .album-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
+/* 모바일 최적화 */
 @media (max-width: 768px) {
-
-  .photo img {
-    width: 210px;
-    height: 210px;
+  .about-photo {
+    width: 220px;
   }
 
-  .dots span:nth-child(1) {
+  .about-photo .dot-1 {
     width: 240px;
     height: 240px;
+    top: -20px;
   }
 
-  .dots span:nth-child(2) {
-    width: 210px;
-    height: 210px;
+  .about-photo .dot-2 {
+    width: 200px;
+    height: 200px;
+    top: 5px;
   }
 
-  .dots span:nth-child(3) {
-    width: 40px;
-    height: 40px;
-    top: 74%;
+  .about-photo .dot-3 {
+    width: 45px;
+    height: 45px;
+    top: 180px;
     left: 72%;
   }
+}
 
-  .album-grid {
-    grid-template-columns: 1fr;
+/* 메인 타이틀과 아래 문장 사이 간격 */
+.heading .typing {
+  margin-bottom: 40px;   /* 숫자 키우면 더 벌어짐 */
+}
+
+/* =============================
+   프로필 뒤 동그라미 복구용 CSS
+============================= */
+
+.photo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 동그라미 전체 공통 */
+.photo .dots span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* 1) 점선 동그라미 (가장 큰 원) */
+.photo .dots span:nth-child(1) {
+  width: 340px;      /* 원 크기 */
+  height: 340px;
+  border: 4px dotted rgba(71,47,168,0.28);
+  top: -40px;        /* 원 위치 — 필요하면 조절 가능 */
+  z-index: 1;
+}
+
+/* 2) 핑크 포인트 동그라미 */
+.photo .dots span:nth-child(2) {
+  width: 80px;       /* 핑크 크기 */
+  height: 80px;
+  background: #f1a9d7af;
+  background-image: radial-gradient(#fff 20%, transparent 0),
+                    radial-gradient(#fff 20%, transparent 0);
+  background-size: 12px 12px;
+  background-position: 0 0, 6px 6px;
+  
+  top: 80%;
+  left: 70%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* ===========================
+   CONTACT 버튼 모바일 중앙정렬 복구
+=========================== */
+@media (max-width: 768px) {
+  .btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* ⭐ 가운데 정렬 핵심 */
+    justify-content: center;
+    width: 100%;
   }
 
-  .section-title {
-    font-size: 26px;
+  .btns button,
+  .btns .btn-1,
+  .btns .btn-2 {
+    width: 240px;          /* 버튼이 너무 좌우로 넓게 퍼지는 것 방지 */
+    max-width: 90%;
+    text-align: center;
   }
 }
