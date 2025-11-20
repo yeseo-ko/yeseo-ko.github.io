@@ -330,3 +330,46 @@ html {
 
     .section-title { font-size: 26px; }
 }
+
+
+/* ============================
+   모바일에서 프로필 이미지 중앙 정렬
+   ============================ */
+@media (max-width: 768px) {
+
+  /* aboutme 전체를 세로 배치 + 좌우 여백 정리 */
+  .aboutme {
+    flex-direction: column;
+    align-items: center;
+    padding: 120px 16px 60px;
+    gap: 32px;
+  }
+
+  /* 프로필 박스 너비 고정 & 중앙 */
+  .photo {
+    flex: none;
+    width: 80%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* 큰 보라 동그라미들을 화면 중앙 기준으로 재정렬 */
+  .photo span:nth-child(1),
+  .photo span:nth-child(2) {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 260px;
+    height: 260px;
+  }
+
+  /* 작은 물방울 무늬는 살짝만 오른쪽으로 */
+  .photo span:nth-child(3) {
+    left: 70%;
+  }
+}
