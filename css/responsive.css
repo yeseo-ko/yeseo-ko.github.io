@@ -21,24 +21,26 @@
     }
 } */
 
-/* 이미지가 화면을 안 튀어나가게 */
+/* 공통 이미지 */
 img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
-/* 컨텐츠 최대 너비 제한 */
+/* 컨테이너 */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
 }
 
-/* 공통 레이아웃 */
+/* GNB */
 header nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 20px 0;
 }
 
 .gnb {
@@ -46,95 +48,142 @@ header nav {
   gap: 24px;
 }
 
-.gnb li a {
+.gnb a {
   text-decoration: none;
   font-weight: 500;
 }
 
-/* aboutme 영역 기본 (PC 기준) */
+/* About Me 영역 레이아웃 */
 .aboutme {
   display: flex;
   align-items: flex-start;
   gap: 40px;
+  margin-top: 60px;
 }
 
-.aboutme .photo {
-  flex: 0 0 280px;
+/* 사진 영역 전체 */
+.photo {
+  position: relative;
+  width: 100%;
+  max-width: 260px;       /* PC 기준 최대 크기 */
+  margin: 0 auto;
 }
 
-.aboutme .desc {
-  flex: 1;
+/* 프로필 사진 */
+.photo img {
+  width: 100%;
+  border-radius: 50%;
 }
 
-/* contact 버튼 가로 배치 기본 */
-.contact .btns {
+/* 동그라미 점들 */
+.photo .dots {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  gap: 16px;
+  gap: 8px;
 }
-/* 768px 이하: 모바일 */
+
+.photo .dots span {
+  width: 10px;
+  height: 10px;
+  background-color: #d3c4ff;
+  border-radius: 50%;
+}
+
+/* 설명 영역 */
+.desc {
+  flex: 1;
+  line-height: 1.6;
+}
+
+/* 부드러운 스크롤 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* =============== 1024px 이하 (태블릿) =============== */
+@media (max-width: 1024px) {
+
+  .container {
+    padding: 0 12px;
+  }
+
+  .gnb {
+    gap: 16px;
+    font-size: 14px;
+  }
+
+  .aboutme {
+    gap: 24px;
+  }
+
+  .photo {
+    max-width: 220px;
+  }
+}
+
+
+/* =============== 768px 이하 (핸드폰) =============== */
 @media (max-width: 768px) {
 
-  /* 전체 폰트 조금 줄이기 */
   body {
     font-size: 14px;
   }
 
-  /* 헤더/네비게이션 */
   header nav {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 10px;
     padding: 10px 0;
   }
 
-  .logo img {
-    height: 32px; /* 필요하면 조절 */
-  }
-
   .gnb {
     width: 100%;
-    justify-content: space-between;
-    gap: 8px;
-    font-size: 13px;
+    justify-content: center;
+    gap: 10px;
     flex-wrap: wrap;
+    font-size: 13px;
   }
 
-  .gnb li {
-    /* 터치하기 쉽게 클릭 영역 넓히기 */
-    padding: 4px 0;
-  }
-
-  /* HOME 섹션 */
+  /* HOME */
   main.home .heading {
     text-align: center;
-    padding: 60px 0 40px;
+    padding-top: 40px;
   }
 
-  main.home p {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
-  /* about me : 가로 → 세로로 */
+  /* About Me 가로 → 세로 */
   .aboutme {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-top: 40px;
   }
 
-  .aboutme .photo {
-    flex: none;
+  /* 사진 크기 모바일용 */
+  .photo {
+    max-width: 180px;   /* 모바일에서 더 작게 */
+    margin-bottom: 20px;
   }
 
-  .aboutme .desc {
+  .photo .dots span {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* 텍스트 */
+  .desc {
     width: 100%;
+    text-align: center;
   }
 
-  .aboutme dl {
-    text-align: left;
+  .desc dl {
+    text-align: left;   /* 내용은 왼쪽 정렬 유지 */
     font-size: 13px;
   }
 
+  /* hash 태그들 */
   .hashs {
     display: flex;
     flex-wrap: wrap;
@@ -142,83 +191,22 @@ header nav {
     justify-content: center;
   }
 
-  /* album 섹션 */
-  .pro h1 {
-    text-align: center;
-    margin-bottom: 16px;
-    font-size: 20px;
-  }
-
-  .pro .album {
-    /* 카드들이 있다면 세로로 한 줄씩 쌓이게 */
-    display: block;
-  }
-
-  /* contact 섹션 */
-  .contact {
-    padding: 40px 0;
-    text-align: center;
-  }
-
-  .contact p {
-    margin-bottom: 16px;
-  }
-
+  /* 연락처 버튼 */
   .contact .btns {
+    display: flex;
     flex-direction: column;
-    align-items: stretch;
+    gap: 12px;
   }
 
   .contact .btns button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     font-size: 14px;
   }
 
-  /* 맨 위로 버튼 위치 조정 (있으면) */
+  /* 맨 위로 버튼 위치 조정 */
   .GoToTop {
     right: 16px;
     bottom: 16px;
-  }
-}
-
-/* 1024px 이하: 태블릿/작은 노트북 */
-@media (max-width: 1024px) {
-
-  .container {
-    padding: 0 12px;
-  }
-
-  .aboutme {
-    gap: 24px;
-  }
-
-  .aboutme .photo {
-    flex: 0 0 220px;
-  }
-
-  .gnb {
-    gap: 16px;
-    font-size: 14px;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .photo img {
-    max-width: 180px; /* 모바일에서는 더 작게 */
-  }
-}
-
-
-.photo {
-  width: 100%;
-  max-width: 280px; /* PC 기준 */
-  margin: 0 auto;
-}
-
-@media (max-width: 768px) {
-  .photo {
-    max-width: 200px;
   }
 }
