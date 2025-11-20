@@ -101,9 +101,10 @@ nav{
    }
 .photo img{
     width: 100%;
-    height: 500px;
-    border-radius: 61% 39% 52% 48% / 60% 33% 67% 40%    ;  
-   }
+    height: auto; /* ← 고정 500px 말고 자동 비율 유지 */
+    max-height: 500px;
+    border-radius: 61% 39% 52% 48% / 60% 33% 67% 40%;
+}
 .photo span:nth-child(1){
     height: 441px;
     width: 413px;
@@ -302,10 +303,3 @@ html {
   scroll-margin-top: 100px; /* 헤더 높이에 맞게 숫자 조절 */
 }
 
-.photo img {
-  width: 100%;
-  max-width: 280px; /* PC에서 최대 크기 */
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}

@@ -1,162 +1,81 @@
-/* width 가 px이면 상대비율(%)로 바꾼다. */
-/* @media(max-width: 768px){
-    .aboutme{
-        flex-direction: column;
-
-    }
-
-    .projects{
-        flex-direction: column;
-
-    }
-    .heading h1{
-        font-size: 24px;
-       
-    }
-    nav{
-        
-        width: 100%;
-       
-    
-    }
-} */
-
-/* ===================== 모바일 768px 이하 ===================== */
+/* ===================== 768px 이하: 모바일 레이아웃 ===================== */
 @media (max-width: 768px) {
 
-  /* 전체 컨텐츠 폭을 모바일에 맞게 */
+  /* 컨텐츠 폭 화면에 맞추기 */
   .contents {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 auto !important;
-    padding: 0 16px !important;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
   }
 
-  nav {
-    width: 100% !important;
-  }
-
-  /* 네비 메뉴 */
+  /* 네비게이션 정렬 */
   header nav {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    padding: 10px 0 !important;
+    padding: 10px 0;
   }
 
   .gnb {
     width: 100%;
     justify-content: center;
-    gap: 10px;
     flex-wrap: wrap;
+    gap: 8px;
   }
 
-  /* Home 섹션 */
-  .heading h1,
-  .heading p {
+  /* About Me: 가로 → 세로 */
+  .aboutme {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    padding: 40px 0;
+    gap: 20px;
+  }
+
+  /* 사진 박스 */
+  .photo {
+    flex: none;
+    margin: 0 auto 20px auto;
+    max-width: 200px;
+  }
+
+  .photo img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+
+  /* 텍스트 부분 */
+  .desc {
+    flex: none;
+    width: 100%;
+    padding: 0 8px;
     text-align: center;
   }
 
-  /* About Me 전체 세로 배치 */
-  .aboutme {
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    height: auto !important;
-    padding: 40px 0 !important;
-    gap: 20px !important;
-  }
-
-  /* 프로필 사진 박스 초기화 + 중앙 정렬 */
-  .photo {
-    flex: none !important;
-    margin: 0 auto 20px auto !important;
-    position: static !important;
-
-    margin-right: 0 !important;
-    left: auto !important;
-    right: auto !important;
-    top: auto !important;
-    transform: none !important;
-
-    width: 100% !important;
-    max-width: 180px !important;
-  }
-
-  /* 사진 자체 */
-  .photo img {
-    width: 100% !important;
-    height: auto !important;
-    max-width: 180px !important;
-    margin: 0 auto !important;
-    border-radius: 61% 39% 52% 48% / 60% 33% 67% 40%;
-  }
-
-  /* 사진 뒤 장식들(static으로 변경) */
-  .photo span:nth-child(1),
-  .photo span:nth-child(2),
-  .photo span:nth-child(3) {
-    position: static !important;
-    display: block !important;
-    margin: 10px auto 0 auto !important;
-  }
-
-  .photo span:nth-child(1) {
-    width: 150px !important;
-    height: 150px !important;
-  }
-
-  .photo span:nth-child(2) {
-    width: 130px !important;
-    height: 130px !important;
-  }
-
-  .photo span:nth-child(3) {
-    width: 40px !important;
-    height: 40px !important;
-  }
-
-  /* 설명 본문 */
-  .desc {
-    flex: none !important;
-    width: 100% !important;
-    text-align: center !important;
-    padding: 0 20px !important;
-  }
-
   .desc dl {
-    text-align: left !important;
-    margin-top: 20px;
+    text-align: left;
+    margin-top: 16px;
     font-size: 14px;
   }
 
-  /* 해시태그 중앙 정렬 */
-  .hashs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    justify-content: center;
-  }
-
-  /* 연락처 버튼 */
-  .contact {
-    padding: 40px 0 !important;
-  }
-
+  /* 연락처 버튼 세로 정렬 */
   .btns {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
   }
 
-  .btns button {
-    width: 100% !important;
+  .btn-1,
+  .btn-2 {
+    width: 100%;
   }
 
-  /* TOP 버튼 조정 */
+  /* TOP 버튼 위치 조정 */
   .GoToTop {
-    right: 16px !important;
-    bottom: 16px !important;
+    right: 16px;
+    bottom: 16px;
   }
-
 }
