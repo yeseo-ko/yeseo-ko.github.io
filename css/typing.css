@@ -1,0 +1,19 @@
+.typing-txt{display: none;}
+.typeing-txt ul{list-style:none;}
+.typing {  
+  display: inline-block; 
+  animation-name: cursor; 
+  animation-duration: 0.5s; 
+  animation-iteration-count: infinite; 
+  font-size: 56px;
+  /* 커서꾸미기 */
+    height: 50px;
+    line-height: 56px;
+} 
+@keyframes cursor{ 
+  0%{border-right: 1px solid #fff} 
+  50%{border-right: 1px solid #472fa8} 
+  100%{border-right: 1px solid #fff} 
+}
+
+

@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+/* top누르면 스크롤 부드럽게 - 익플은 안됨 */
+/* html{
+    scroll-behavior: smooth;
+} */
+
+.contents{
+    width: 1280px;
+    margin: auto;
+}
+/* 네비게이션 */
+header{
+    position: absolute;
+    position: fixed;
+    width: 100%;
+    transition: 0.5s;
+    
+}
+/* 네비메뉴바*/
+.active .gnb li a{
+    color: #000;
+   
+}
+.active{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.144);
+    background: #fff;
+    z-index: 100;
+}
+
+nav{
+    display:flex;
+    width: 1280px;
+    margin: auto;
+    justify-content: space-between;
+
+}
+.gnb{
+    display:flex;
+}
+.gnb li{
+    margin: 20px;
+}
+.gnb li:last-child{
+    margin-right: 0;
+}
+.gnb li a{
+    color: #fff;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    width: 72px;
+    height: 55px;
+    margin-left:20px;
+   
+
+}
+/* 메인이미지 */
+.home{
+    display: flex;
+    height: 100vh;
+    background: url('../images/full3.jpg') no-repeat center center;
+    background: url('../images/ani.gif') no-repeat center center;
+    background-size: 100% 100%;
+}
+.heading{
+    text-align: center;
+    color: #fff;
+}
+
+/* 풀배경으로 가야하는 레이아웃 */
+.FullScreen{
+    height:100vh;
+}
+/*내 프로필영역 */
+.s2{
+    background: url('../images/bg_gray.png') no-repeat center center;
+}
+
+.aboutme{
+    display: flex;
+    flex:5;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+/* 프로필사진영역 */
+.photo{
+    flex:2;
+    margin-right:220px;
+    position: relative;
+    
+   }
+.photo img{
+    width: 100%;
+    height: 500px;
+    border-radius: 61% 39% 52% 48% / 60% 33% 67% 40%    ;  
+   }
+.photo span:nth-child(1){
+    height: 441px;
+    width: 413px;
+    border: 4px dotted rgba(71, 47, 168, 0.286);
+    position: absolute;
+    bottom: 15%;
+    left: -2%;
+    border-radius: 48% 52% 61% 39% / 44% 55% 45% 56%;
+    z-index: -1;
+}
+.photo span:nth-child(2){
+    height: 372px;
+    width: 413px;
+    background:  #472fa85d ;
+    position: absolute;
+    bottom: 0%;
+    left: -7%;
+    border-radius: 48% 52% 61% 39% / 44% 55% 45% 56%;
+    z-index: -1;
+}
+.photo span:nth-child(3){
+    height: 40px;
+    width: 50px;
+    background: #f1a9d7af;
+    background-image: radial-gradient(rgb(255, 255, 255) 20%, transparent 0), radial-gradient(rgb(255, 255, 255) 20%, transparent 0);
+    background-position: 0 0, 10px 10px;
+    background-size: 10px 10px;
+    position: absolute;
+    bottom: 4%;
+    left: 82%;
+    border-radius: 48% 52% 61% 39% / 44% 55% 45% 56%;
+    z-index: -1;
+}
+/* 프로필내용영역 */
+.desc{
+    flex:3;
+}
+/* about me 타이틀 */
+.abm_title{
+    position: relative;
+}
+.abm_title h1{
+    font-size: 42px;
+    color:  #472fa8;
+    font-family: 'Indie Flower', cursive;
+}
+    
+.abm_title span{
+    height: 28px;
+    width: 200px;
+    background: #472fa823;
+    position: absolute;
+    bottom: -74%;
+    border-radius: 34% 66% 46% 54% / 50% 47% 53% 50%  ;
+}
+/* 프로필 내용영역 */
+.desc h3{
+    padding: 28px 0;
+}
+.desc h3 b{
+    font-size: 28px;
+    
+}
+
+.desc dt{
+    font-size: 20px;
+    color: #a8a8a8;
+}
+/* 성격 해시태그 */
+.hashs span{
+    font-size: 14px;
+    padding: 14px;
+    background: #472fa894;
+    border-radius: 20px;
+    color: #fff;
+    margin-right: 16px;
+}
+.hashs span:nth-child(2){
+    background: #ab60dd8e;
+}
+.hashs span:nth-child(3){
+    background: #f1a9d7af;
+}
+
+/* 콜투액션  */
+.c-t-a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+
+}
+.call-to-action{
+    background: url('../images/call.jpg') no-repeat center;
+    background-size: cover;
+    /* 띠배너가 중앙으로 안왔던 이유: 부모디브에 플렉스를 안줬고, 지금 디브에 width를 안쭸기 때ㅔ문 */
+    width: 100%;
+    height: 450px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}   
+.call-to-action:before{
+    content: '';
+    background: linear-gradient(90deg, #472fa744, #dc87e57c);
+    width: 100%;
+    height: 450px;
+    position: absolute;
+
+}
+.call-to-action a{
+    color: #fff;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #472fa7, #5331ad, #dc87e5);
+    z-index: 1;
+}
+.call-to-action h2{
+    margin-bottom: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 40px;
+    color: #fff;
+    z-index: 1;
+}
+
+
+/* 연락처 */
+.contact{
+    background: linear-gradient(180deg, #482fa8, #7641bc);
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact p{
+    color: #fff;
+    font-size: 30px;
+}
+
+.contact span{
+    
+    background: url('../images/luna.png') no-repeat center;
+    width: 40px;
+    height: 45px;
+    background-size: 30px 40px;
+}
+
+/* contact 버튼디자인 */
+.btns{
+    margin-top: 17px ;
+}
+.btn-1, .btn-2{
+    display: inline-block;
+    padding: 12px;
+    width: 180px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 20px;
+    color: #fff;
+    background: inherit;
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow:none; cursor:pointer;}
+.btns i{
+    padding-right: 7px;
+}
+/* GoToTop top버튼 */
+.GoToTop{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #a72f97, #7641bc);
+    /* 폰트어썸은 폰트속성 */
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    font-size: 30px;
+    /* 스크롤효과*/
+    /* transition의 기본 속기값은 duration */
+    transition: 0.5s;
+}
