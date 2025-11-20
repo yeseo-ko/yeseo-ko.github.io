@@ -290,3 +290,7 @@ nav{
     /* transition의 기본 속기값은 duration */
     transition: 0.5s;
 }
+
+html {
+  scroll-behavior: smooth;
+}
