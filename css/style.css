@@ -294,3 +294,9 @@ nav{
 html {
   scroll-behavior: smooth;
 }
+
+#aboutme,
+#album,
+#contactme {
+  scroll-margin-top: 100px; /* 헤더 높이에 맞게 숫자 조절 */
+}
